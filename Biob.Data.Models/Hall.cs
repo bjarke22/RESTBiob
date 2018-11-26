@@ -14,6 +14,10 @@ namespace Biob.Data.Models
         public int HallNo { get; set; }
         public int NoOfSeats { get; set; }
         public bool ThreeDee { get; set; }
+
+        //Foreign key:
+        //Foreign key on seats table requires this
         public IList<Seat> Seats { get; set; }
+        public IList<Ticket> Tickets { get; set; }
     }
 }

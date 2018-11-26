@@ -15,5 +15,8 @@ namespace Biob.Data.Models
         public int SeatNo { get; set; }
         [ForeignKey("Hall")]
         public Guid HallId { get; set; }
+
+        //Foreign key:
+        public Hall Hall { get; set; }
     }
 }

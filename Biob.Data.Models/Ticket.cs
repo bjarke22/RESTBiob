@@ -10,14 +10,26 @@ namespace Biob.Data.Models
     [Table("Tickets")]
     public class Ticket : DeleteableModelBase<Guid>
     {
-        [ForeignKey("Customer")]
+        //Fields:
+        
+        //Todo when customer is added:
+        //[ForeignKey("Customer")]
         public Guid CustomerId { get; set; }
         [ForeignKey("Showtime")]
         public Guid ShowtimeId { get; set; }
-        [ForeignKey("HallSeatId")]
-        public int HallSeatId { get; set; }
+        //Should only have ShowTime as that includes Hall:
+        //[ForeignKey("Hall")]
+        //public Guid HallId { get; set; }
+        [ForeignKey("Seat")]
+        public Guid SeatId { get; set; }
         public bool Reserved { get; set; }
         public bool Paid { get; set; }
         public int Price { get; set; }
+
+        //Foreign key:
+        //public Customer Customer { get; set; }
+        public Showtime Showtime { get; set; }
+        //public Hall Hall { get; set; }
+        public Seat Seat { get; set; }
     }
 }

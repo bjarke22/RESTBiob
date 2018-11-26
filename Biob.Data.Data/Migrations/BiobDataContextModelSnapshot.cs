@@ -210,9 +210,12 @@ namespace Biob.Data.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("HallId");
+                    b.HasIndex("HallId"); //Probably not very giving
 
                     b.HasIndex("IsDeleted");
+
+                    //TODO:
+                    //b.HasIndex(b => new { "b.RowNo", "b.SeatNo" });
 
                     b.ToTable("Seats");
 
