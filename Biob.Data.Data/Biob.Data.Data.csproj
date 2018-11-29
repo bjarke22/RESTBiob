@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <Compile Remove="Migrations\20181128172242_RemovedTicketReservedAndDidForeignKeyStuff.cs" />
+    <Compile Remove="Migrations\20181129120713_testAreThereAnyChanges.cs" />
   </ItemGroup>
 
   <ItemGroup>

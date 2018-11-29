@@ -58,6 +58,9 @@ namespace Biob.Data.Data
             //Another option was to not have the foreign key on showtimes, but i think just removing the cascade on delete for showtimes would make better sense
             modelBuilder.Entity<Showtime>().HasOne(x => x.Hall).WithMany().HasForeignKey(x => x.HallId).OnDelete(DeleteBehavior.Restrict);
 
+            //unique constraint (is an index implicitly) on three columns Hallid, RowNo and SeatNo
+            modelBuilder.Entity<Seat>().HasIndex(seat => new { seat.RowNo, seat.SeatNo, seat.HallId }).IsUnique();
+
             //  TODO: add seed data
             modelBuilder.Entity<Genre>().HasData(
                 new Genre() { Id = Guid.Parse("8068CBF6-C595-4733-9C24-8104E8454B4C"), GenreName = "Horror" },
@@ -207,9 +210,6 @@ namespace Biob.Data.Data
                 new Seat() { Id = Guid.Parse("979FA768-B42A-444C-944E-4295AE64E00D"), HallId = Guid.Parse("D90AC9E4-32BA-4B5C-80EA-6EDA60C0131B"), RowNo = 1, SeatNo = 8 },
                 new Seat() { Id = Guid.Parse("CB3314DB-47A0-495A-BDDB-FF2C8F17395D"), HallId = Guid.Parse("D90AC9E4-32BA-4B5C-80EA-6EDA60C0131B"), RowNo = 1, SeatNo = 9 },
                 new Seat() { Id = Guid.Parse("F1A83A75-1770-47B3-B209-40198951D4AF"), HallId = Guid.Parse("D90AC9E4-32BA-4B5C-80EA-6EDA60C0131B"), RowNo = 1, SeatNo = 10 }
-                
-                
-
                 );
 
             modelBuilder.Entity<Showtime>().HasData(
