@@ -30,7 +30,7 @@ namespace Biob.Services.Data.Repositories
                 { "Genre", new PropertyMappingValue(new List<string>() { "Genre" })},
                 { "Released", new PropertyMappingValue(new List<string>() { "Released" })},
                 { "ThreeDee", new PropertyMappingValue(new List<string>() { "ThreeDee" })},
-                { "AgeRestriction", new PropertyMappingValue(new List<string>() { "AgeRestriction" })},
+                { "AgeRestriction", new PropertyMappingValue(new List<string>() { "AgeRestriction" })}
             });
         }
         public void AddMovie(Movie movieToAdd)
