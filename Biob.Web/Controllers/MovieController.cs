@@ -123,7 +123,7 @@ namespace Biob.Web.Controllers
             var foundMovie = await _movieRepository.GetMovieAsync(movieId);
 
             var movie = Mapper.Map<MovieDto>(foundMovie);
-
+            //I wonder if the null check should happen before using it to map
             if (foundMovie == null)
             {
                 return NotFound();
