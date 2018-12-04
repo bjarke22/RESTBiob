@@ -558,14 +558,14 @@ namespace Biob.Web.Controllers
         [HttpOptions]
         public IActionResult GetMoviesOptions()
         {
-            Response.Headers.Add("Allow", "GET,POST,OPTIONS");
+            Response.Headers.Add("Allow", "GET,OPTIONS");
             return Ok();
         }
 
         [HttpOptions("{movieId}")]
         public IActionResult GetMovieOptions()
         {
-            Response.Headers.Add("Allow", "GET,PATCH,PUT,OPTIONS");
+            Response.Headers.Add("Allow", "GET,PATCH,PUT,POST,OPTIONS");
             return Ok();
         }
 
